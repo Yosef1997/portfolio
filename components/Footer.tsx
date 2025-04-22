@@ -18,7 +18,7 @@ const Footer = () => {
     <footer className='flex flex-col p-5 md:p-20 bg-black'>
       {path !== '/contact' && (
         <div className='flex items-center justify-between mb-[50px] md:mb-[100px]'>
-          <p className='text-2xl md:text-4xl lg:text-5xl text-off-white font-medium'>
+          <p className='text-xs md:text-4xl lg:text-5xl text-off-white font-medium'>
             Have something in mind?
             <br />
             <span className='flex items-center'>
@@ -33,7 +33,7 @@ const Footer = () => {
               let’s build it together.
             </span>
           </p>
-          <button className='text-lg bg-off-white font-medium bg px-6 py-3 md:px-12 md:py-6 rounded-full hover:border-y-4 hover:font-bold border-off-white'>
+          <button className='text-xs md:text-lg bg-off-white font-medium bg px-2 py-2 md:px-6 md:py-3 lg:px-12 lg:py-6 rounded-full hover:border-y-4 hover:font-bold border-off-white'>
             Get in touch
           </button>
         </div>
