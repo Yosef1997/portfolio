@@ -1,6 +1,7 @@
 'use client'
 import About from '@/components/About'
 import Marquee from '@/components/Marquee'
+import MenuDialog from '@/components/MenuDialog'
 import SectionWithViewport from '@/components/SectionWithViewport'
 import Work from '@/components/Work'
 import WorkRow from '@/components/WorkRow'
@@ -10,13 +11,19 @@ import { useState } from 'react'
 
 export default function Home() {
   const [isIntroVisible, setIntroVisible] = useState(true)
+  const [openMenu, setOpenMenu] = useState(false)
   return (
     <div className='overflow-x-hidden'>
       {!isIntroVisible && (
-        <div className='fixed z-50 right-3 top-3 lg:top-[26px] flex items-center bg-black rounded-full p-2.5 md:p-5'>
+        <div
+          onClick={() => setOpenMenu(true)}
+          className='fixed z-50 right-3 top-3 lg:top-[26px] flex items-center bg-black rounded-full p-2.5 md:p-5'
+        >
           <Menu color='white' size={25} />
         </div>
       )}
+      {openMenu && <MenuDialog onClosed={() => setOpenMenu(false)} />}
+
       <div className='relative flex flex-col items-center bg-light-grey pt-6 md:pt-[46px]'>
         <Image
           className='bg-blend-multiply'
@@ -30,7 +37,10 @@ export default function Home() {
           onEnterViewport={() => setIntroVisible(true)}
           onLeaveViewport={() => setIntroVisible(false)}
         >
-          <div className='absolute right-0 top-1/2 flex items-center bg-black rounded-l-full p-[5px] md:py-5 md:px-[30px] translate-x-3/4 hover:-translate-x-0 transition delay-150 duration-300'>
+          <div
+            onClick={() => setOpenMenu(true)}
+            className='absolute right-0 top-1/2 flex items-center bg-black rounded-l-full p-[5px] md:py-5 md:px-[30px] translate-x-3/4 hover:-translate-x-0 transition delay-150 duration-300'
+          >
             <span className='text-xl md:text-4xl'>👋</span>
             <span className='text-off-white text-base md:text-[40px] pl-2.5 md:pl-7 '>
               Hi I&apos;m Yosef
