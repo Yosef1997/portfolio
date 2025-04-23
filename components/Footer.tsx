@@ -33,7 +33,7 @@ const Footer = () => {
               let’s build it together.
             </span>
           </p>
-          <button className='text-xs md:text-lg bg-off-white font-medium bg px-2 py-2 md:px-6 md:py-3 lg:px-12 lg:py-6 rounded-full hover:border-y-4 hover:font-bold border-off-white'>
+          <button className='text-xs cursor-pointer md:text-lg bg-off-white font-medium bg px-2 py-2 md:px-6 md:py-3 lg:px-12 lg:py-6 rounded-full hover:border-y-4 hover:font-bold border-off-white'>
             Get in touch
           </button>
         </div>

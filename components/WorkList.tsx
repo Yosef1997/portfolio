@@ -36,7 +36,7 @@ const WorkList: React.FC<WorkListInterface> = ({ recentWork }) => {
             </div>
             <Button
               onClick={() => window.open(e.url, '_blank')}
-              className='p-5 border border-dark-grey rounded-full text-dark-grey hover:text-off-white bg-off-white hover:bg-dark-grey'
+              className='p-5 cursor-pointer border border-dark-grey rounded-full text-dark-grey hover:text-off-white bg-off-white hover:bg-dark-grey'
               title='Explore'
             >
               <ArrowUpRight />

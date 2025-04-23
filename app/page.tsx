@@ -17,7 +17,7 @@ export default function Home() {
       {!isIntroVisible && (
         <div
           onClick={() => setOpenMenu(true)}
-          className='fixed z-50 right-3 top-3 lg:top-[26px] flex items-center bg-black rounded-full p-2.5 md:p-5'
+          className='fixed cursor-pointer z-50 right-3 top-3 lg:top-[26px] flex items-center bg-black rounded-full p-2.5 md:p-5'
         >
           <Menu color='white' size={25} />
         </div>
@@ -39,7 +39,7 @@ export default function Home() {
         >
           <div
             onClick={() => setOpenMenu(true)}
-            className='absolute right-0 top-1/2 flex items-center bg-black rounded-l-full p-[5px] md:py-5 md:px-[30px] translate-x-3/4 hover:-translate-x-0 transition delay-150 duration-300'
+            className='absolute cursor-pointer right-0 top-1/2 flex items-center bg-black rounded-l-full p-[5px] md:py-5 md:px-[30px] translate-x-3/4 hover:-translate-x-0 transition delay-150 duration-300'
           >
             <span className='text-xl md:text-4xl'>👋</span>
             <span className='text-off-white text-base md:text-[40px] pl-2.5 md:pl-7 '>

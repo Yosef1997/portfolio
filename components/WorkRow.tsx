@@ -79,7 +79,7 @@ const WorkRow = () => {
                   >
                     <div className='absolute bg-black pointer-events-none opacity-50 h-full w-full' />
                     <motion.h1
-                      className='bg-off-white font-semibold text-sm z-10 px-3 py-2 rounded-full flex items-center gap-[0.5ch] hover:bg-dark-grey hover:text-off-white'
+                      className='bg-off-white cursor-pointer font-semibold text-sm z-10 px-3 py-2 rounded-full flex items-center gap-[0.5ch] hover:bg-dark-grey hover:text-off-white'
                       initial={{ y: 10 }}
                       animate={{ y: 0 }}
                       exit={{ y: 10 }}

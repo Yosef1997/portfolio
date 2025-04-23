@@ -16,6 +16,12 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { sendEmail } from '@/app/actions/sendEmail'
 import { useState } from 'react'
+import Alert from '@/components/Alert'
+
+const SEND_EMAIL_SUCCESS =
+  'Thank you for reaching out through my portfolio website! I appreciate your message and will get back to you within 2 × 24 hours.'
+const SEND_EMAIL_FAILED =
+  'Failed to send your message through my portfolio website. Please try again later or contact me directly via email.'
 
 const formSchema = z.object({
   name: z
@@ -31,7 +37,11 @@ const formSchema = z.object({
     .min(2, { message: 'Message must be at least 2 characters.' }),
 })
 const ContactForm = () => {
-  const [isloading, setIsloading] = useState<boolean>(false)
+  const [isloading, setIsloading] = useState(false)
+  const [openAlert, setOpenAlert] = useState(false)
+  const [alertMessage, setAlertMessage] = useState<string>('')
+  const [alertDescription, setAlertDescription] =
+    useState<string>(SEND_EMAIL_FAILED)
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -45,11 +55,12 @@ const ContactForm = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsloading(true)
     const result = await sendEmail(values)
+    setAlertMessage(result.message)
+    setOpenAlert(true)
+
     if (result.success) {
-      alert(result.message)
+      setAlertDescription(SEND_EMAIL_SUCCESS)
       form.reset()
-    } else {
-      alert(result.message)
     }
     setIsloading(false)
   }
@@ -59,6 +70,15 @@ const ContactForm = () => {
       <h2 className='text-2xl lg:text-6xl font-medium mb-5 md:mb-9 '>
         Let&apos;s build something cool together
       </h2>
+      {openAlert && (
+        <Alert
+          isOpen={openAlert}
+          onOpen={() => setOpenAlert(!openAlert)}
+          title={alertMessage}
+          description={alertDescription}
+          actionStr='Close'
+        />
+      )}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
           <FormField
