@@ -7,6 +7,13 @@ export const recentWork = [
       'https://res.cloudinary.com/dhbg53ncx/image/upload/v1745308113/uk9sete6vvyktcazfjnk.png',
   },
   {
+    name: 'Jobify',
+    url: 'https://jobify-record.up.railway.app/',
+    role: ['Fullstack Development'],
+    imageUrl:
+      'https://res.cloudinary.com/dhbg53ncx/image/upload/v1749010448/ifgxmpgaozgxi9nrgz5n.png',
+  },
+  {
     name: 'Tech Hub',
     url: 'https://tech-hub-flame.vercel.app/',
     role: ['Frontend Development', 'UI/UX'],
